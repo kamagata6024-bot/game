@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>ハメハメゲーム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header class="stats-header">
+      <div class="stat-box">
+        <span class="stat-label">Points</span>
+        <span id="points" class="stat-value">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Level</span>
+        <span id="level" class="stat-value">1</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Click Power</span>
+        <span id="click-power" class="stat-value">1</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Auto Points/s</span>
+        <span id="auto-points" class="stat-value">0</span>
+      </div>
+    </header>
+
+    <main class="game-main">
+      <div class="click-area">
+        <div id="click-target" class="click-target">
+          <img id="click-image" src="images/level_1.png" alt="Click me!" onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
+          <div class="click-effect"></div>
+        </div>
+        <p class="click-hint">Click the image!</p>
+      </div>
+
+      <aside class="shop-panel">
+        <h2 class="shop-title">Shop</h2>
+        <div class="shop-items" id="shop-items"></div>
+      </aside>
+    </main>
+
+    <footer class="level-progress">
+      <div class="progress-info">
+        <span>Total Points: <span id="total-points">0</span></span>
+        <span>Next Level: <span id="next-level-points">100</span></span>
+      </div>
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <div class="unlocked-images">
+        <span>Unlocked Images:</span>
+        <div id="image-gallery" class="image-gallery"></div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
